@@ -1,51 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Ms+Madi&display=swap');
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    height: 100vh;
+}
 .container{
     background-color: darkcyan;
-    margin: 2rem auto;
-    width: 30rem;  
+    margin: 0.2rem auto;
+    width: 40rem;  
     text-align: center; 
   font-family: 'Poppins', sans-serif;
-  padding: 2rem;
+  padding:4rem 5rem;
+  background-image: url(./Orange-Lilies-Flowers-Plants.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+.down{
+    border-radius: 10px;
+    width: 40rem;
+    background-color: rgb(255, 110, 57);
+    text-align: center;
+    margin: 0 auto;
 }
 h1{
-    color: rgb(3, 59, 59);
+    color: rgb(252, 226, 206);
+    text-shadow: 3px 3px 3px black;
+    font-size: 4rem;
+    
 }
 .input{
-    width: 50%;
-    padding: 0.5rem;
+    width: 70%;
+    padding: 1rem;
     border: none;
     /* background-color: rgb(177, 228, 228); */
-    background-color:rgb(19, 212, 212);
+    background-color:rgb(255, 255, 255);
     border-radius: 0.5rem;
 
 }
-h1 i{
-    color: aqua;
-}
+
 input::placeholder {
-    color: aliceblue;
+    color: rgb(248, 159, 86);
     border: none;
    
 }
 
 .btn{
+    margin-left: 1rem;
     border: none;
 border-radius: 0.5rem;
-padding: 0.5rem 1rem;
-background-color: rgb(8, 41, 41);
-color: wheat;
+padding:1rem 2.5rem;
+background-color: rgb(93, 194, 5);
+color: #6A9A0A;
+color: white;
 }
 .todo{
-    background-image: url(https://thumbs.dreamstime.com/b/cyan-wall-texture-background-cyan-wall-texture-background-used-materials-game-engine-interior-design-138784969.jpg);
     margin-top: 2rem;
      font-family: 'Neucha', cursive;
 }
 .altdiv{
-    padding: 0.4rem;
+    color: white;
+    padding: 0.7rem;
     display: flex;
     justify-content: space-between;
+    font-family: 'Dosis', sans-serif;
+    align-items: center;
+}
+.altdiv p{
+    max-width: 15rem;
+     word-wrap: break-word;
+     font-size: 1.3rem;
+     font-weight: 600;
+}
+
+.remove{
+    margin-left: 1rem;
+    background-color: rgb(19, 116, 4);
+    border: none;
+    border-radius: 10px;
+    padding: 0.4rem;
+    color: white;
 }
