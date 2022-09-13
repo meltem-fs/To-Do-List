@@ -1,83 +1,41 @@
-const btn = document.querySelector(".buton");
-const input = document.querySelector("#input")
-const liste = document.querySelector(".ul")
-const trash = document.getElementById("trash")
-const pen = document.getElementById("pen")
-const work = document.getElementById("work")
-const check = document.getElementById("checkbox")
+const input = document.querySelector("#input");
+const btn = document.querySelector("#btn");
+const todo = document.querySelector("#todo");
+const remove = `<button>Remove</button>`;
+const altdiv = document.getElementById("altdiv");
 
-btn.addEventListener("click", () => {
-    if(!input.value){
-        alert("write a to do")
-    }else{
-      liste.innerHTML += `
-              <li>
-                <input type="checkbox" id="check" class="check" name="" id="checkbox">
-                <p id="work">${input.value}</p>
-                <div class="icons">
-                    <i id="pen" class="fa-solid fa-pen"></i>
-                <i id="trash" class="fa-solid fa-trash"></i>
-                </div>
-              </li>
-`;
-    }
-    input.value =""
-})
+let day = new Date().getDate();
+let month = new Date().getMonth() + 1;
+let year = new Date().getFullYear();
 
-input.addEventListener("keydown",(e) => {
-    if(e.keyCode === 13){
-        btn.click()
-    } 
-})
+//? *********onload******
 
-window.onload = () =>{
-    input.focus()
-}
+// window.addEventListener("load", () => {
+//   //baslangıç
+//   const todos = localStorage.getItem("todos");
+//   if (!todos) {
+//     localStorage.setItem("todos", JSON.stringify([]));
+//     console.log(todos);
+//   } else {
+//     let datalist = JSON.parse(localStorage.getItem("todos")); // dataliste eğer json parse içi doluysa yani true ise aktar ama yoksa [] yi aktar demek || oluyor.
 
-liste.addEventListener('click', (e) => {
-  if (e.target.classList.contains('fa-trash')) {
-    e.target.parentElement.parentElement.remove();}
-  })
-
-
-
-check.addEventListener("click", (event) => {
-  if (event.target.checked) {
-    alert("checked");
-  } else {
-    alert("not checked");
-  }
-});
-
-
-
-
-
-
-
-// trash.addEventListener("click",() =>{
-// for (let i = 1; i < liste.childElementCount; i++) {
-//   liste.childElementCount[i].trash.onclick = function () {
-//     var div = this.parentElement.parentElement;
-//     div.style.display = "none";
-//   };
-// }
+//     datalist.forEach((e) => {
+//       //? her bir todo objesini destructor yaptık
+//       const { id, text, date } = e;
+//       let element = document.createElement("div");
+//       element.classList.add("altdiv");
+//       element.innerHTML = `<input class="box" type = "checkbox"   />
+//     <p>${text}</p><div class="date">${date}<button class = "rmvBtn"> REMOVE</button></div>`;
+//       list.appendChild(element);
+//     });
+//   }
 // })
 
-
-// liste.addEventListener("click", (e) => {
-//   if (e.target.classList.contains("fa-pen")) {
-//     input.value= e.target.parentElement.previousElementSibling.innerHTML;
-   
-    
-//   }
-// });
-
-//  if (e.target.classList.contains("fa-pen")) {
-//    document.getElementById("input").value =
-//      e.target.parentNode.childNodes[0].data;
-//    submit.value = "EDIT";
-//    editItem = e;
-//  }
-
-
+btn.addEventListener("click", () => {
+  if (!input.value) {
+    alert("birşey gir");
+  } else {
+    todo.innerHTML += `<div class="altdiv" id="altdiv"><input type="checkbox"><p>${input.value}</p><div class="günler">${day}.${month}.${year}  <button>${remove}</button></div></div>`;
+  }
+  input.value = "";
+});
