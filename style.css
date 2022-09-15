@@ -61,6 +61,7 @@ color: white;
 .todo{
     margin-top: 2rem;
      font-family: 'Neucha', cursive;
+     
 }
 .altdiv{
     color: white;
@@ -84,4 +85,17 @@ color: white;
     border-radius: 10px;
     padding: 0.4rem;
     color: white;
+}
+
+.checked > p{
+    text-decoration: line-through green;
+
+}
+
+
+#icon{
+    /* border: 2px solid black; */
+}
+.fa-check{
+    color: greenyellow;
 }
