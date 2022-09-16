@@ -10,6 +10,15 @@ let month = new Date().getMonth() + 1;
 let year = new Date().getFullYear();
 
 
+window.onload = function () {
+  input.focus();
+};
+
+
+
+// localStorage.setItem("lists",JSON.stringify(todo))
+// let lists = localStorage.getItem("lists")
+// let todos = JSON.parse(localStorage.getItem("todos")) || [];
 
 
 btn.addEventListener("click", () => {
@@ -32,17 +41,22 @@ input.addEventListener("keydown", (e) => {
   }
 });
 
+
+
+
 todo.addEventListener("click", (e) => {
   if (e.target.classList.contains("remove") && e.target.parentElement.parentElement.classList.contains("checked") ) {
     e.target.parentElement.parentElement.remove();
+  }else if (!e.target.classList.contains("remove")) {
+    
   }else{
-    alert("görevi tamamlamadan silemezsiniz")
+    alert("görevi tamamlayınız")
   }
 });
 
  
 todo.addEventListener("click" , (e) => {
- console.log(e.target);
+
   if(e.target.classList.contains("icon")){
     
     if (e.target.parentElement.classList.contains("checked")) {
